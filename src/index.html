@@ -10,13 +10,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
     <script>
       const socket = io('http://localhost:3000');
-      /*
+
       const button = document.querySelector('#pingButton');
       button.addEventListener('click', (e) => {
         socket.emit('ping');
         return false;
       });
-      */ 
 
       const createMessage = (message) => {
         const messagesUl = document.querySelector('#messages');
@@ -25,6 +24,7 @@
         messagesUl.appendChild(li);
       }
       socket.on('ola', (mensagem) => createMessage(mensagem));
+      socket.on('pong', (mensagem) => createMessage(mensagem));
     </script>
   </body>
 </html>
