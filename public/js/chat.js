@@ -1,5 +1,9 @@
 const socket = window.io();
 
+window.onbeforeunload = function(event) {
+    socket.disconnect();
+  };
+
 const form = document.querySelector('form');
 const inputMessage = document.querySelector('#messageInput');
 
@@ -9,3 +13,12 @@ form.addEventListener('submit', (e) => {
   inputMessage.value = '';
   return false;
 });
+
+const createMessage = (message) => {
+  const messagesUl = document.querySelector('#messages');
+  const li = document.createElement('li');
+  li.innerText = message;
+  messagesUl.appendChild(li);
+};
+
+socket.on('serverMessage', (message) => createMessage(message));
