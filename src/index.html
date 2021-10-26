@@ -6,9 +6,8 @@
   <body>
       <h1>Hello world!!!</h1>
   </body>
-  <script src="../node_modules/socket.io/client-dist/socket.io.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
   <script>
-    const socket = io();
-
+    const socket = io('http://localhost:3000');
   </script>
 </html>
