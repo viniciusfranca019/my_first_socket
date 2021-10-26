@@ -4,10 +4,27 @@
     <title>Socket.IO - Trybe</title>
   </head>
   <body>
-      <h1>Hello world!!!</h1>
+    <h1>Hello world!!!</h1>
+    <button id='pingButton'>PING</button>
+    <ul id='messages'></ul>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
+    <script>
+      const socket = io('http://localhost:3000');
+      /*
+      const button = document.querySelector('#pingButton');
+      button.addEventListener('click', (e) => {
+        socket.emit('ping');
+        return false;
+      });
+      */ 
+
+      const createMessage = (message) => {
+        const messagesUl = document.querySelector('#messages');
+        const li = document.createElement('li');
+        li.innerText = message;
+        messagesUl.appendChild(li);
+      }
+      socket.on('ola', (mensagem) => createMessage(mensagem));
+    </script>
   </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
-  <script>
-    const socket = io('http://localhost:3000');
-  </script>
 </html>
