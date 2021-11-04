@@ -4,6 +4,8 @@ Esse readme tem a função de documentar o aprendizado sobre sockets na trybe:
 2. usando o package NET do node para usar sockets
 3. eventos do NET
 4. exemplo client n server
+5. config o socket.io
+6. criando um chat com o socket.io
 
 ## Exemplo client n server
 
